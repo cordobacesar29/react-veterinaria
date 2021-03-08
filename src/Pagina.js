@@ -1,5 +1,7 @@
 import React from "react";
 import { Nav } from './component/Nav';
+import { ActionMenu } from './component/ActionMenu';
+import { Table } from './component/Table';
 
 export const Pagina = () => {
     return(
@@ -7,26 +9,8 @@ export const Pagina = () => {
             <div className="container">
                 <Nav/>                
                 <h4 className="page-title">Mascotas</h4>
-                <div className="actions-menu">
-                    <button type="button" className="btn btn-dark" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    Nueva
-                    </button>
-                    <div id="actions-menu"></div>
-                </div>
-                <table className="table table-hover">
-                    <thead className="table-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Tipo</th>
-                        <th scope="col">Nombre</th>
-                        <th scope="col">Propietario</th>
-                        <th scope="col"></th>
-                    </tr>
-                    </thead>
-                    <tbody id="lista-mascotas">
-                    
-                    </tbody>
-                </table>
+                <ActionMenu/>
+                <Table/>
             </div> 
             <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
