@@ -1,5 +1,6 @@
 import React from 'react';
 import './ActionMenu.css';
+import { Alert } from '../Alert/Alert';
 
 export const ActionMenu = () => {
     return (
@@ -9,6 +10,7 @@ export const ActionMenu = () => {
             Nueva
             </button>
             <div id="actions-menu"></div>
+            <Alert/>
         </div>
     )
 }
