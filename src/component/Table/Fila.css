@@ -4,6 +4,10 @@
     border-top: 1px solid #dee2e6;
 }
 
+.table-hover tbody tr {
+    text-align: center;
+}
+
 .table-hover tbody tr:hover {
     color: #212529;
     background-color: rgba(0,0,0,.075);

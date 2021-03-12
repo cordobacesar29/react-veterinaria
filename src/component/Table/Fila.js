@@ -1,4 +1,6 @@
 import React from 'react';
+import './Fila.css';
+import { BotonAction } from '../BotonAction/BotonAction';
 
 export const Fila = ({mascota, index}) => {
     return (
@@ -9,8 +11,8 @@ export const Fila = ({mascota, index}) => {
         <td>{mascota.propietario}</td>
         <td>
             <div className="btn-group" role="group" aria-label="Basic example">
-                <button type="button" className="btn btn-info editar"><i className="fas fa-edit"></i></button>
-                <button type="button" className="btn btn-danger eliminar"><i className="far fa-trash-alt"></i></button>
+                <BotonAction tipo="editar"/>
+                <BotonAction tipo="eliminar"/>
             </div>
         </td>
         </tr>

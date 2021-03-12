@@ -32,7 +32,8 @@
 
 .container-fluid {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding: 0rem 3rem;
 }
 
 .navbar-nav {
