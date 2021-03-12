@@ -2,7 +2,7 @@ import React from "react";
 import { Nav } from './component/Nav/Nav';
 import { ActionMenu } from './component/ActionMenu/ActionMenu';
 import { Table } from './component/Table/Table';
-import { Modal } from './component/Modal';
+import { Modal } from './component/Modal/Modal';
 
 export const Pagina = () => {
     return(
