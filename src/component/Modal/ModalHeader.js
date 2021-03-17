@@ -1,4 +1,5 @@
 import React from 'react';
+import './ModalHeader.css';
 
 export const ModalHeader = () => {
     return (
@@ -12,6 +13,7 @@ export const ModalHeader = () => {
                 data-bs-dismiss="modal" 
                 aria-label="Close"
             >
+            X
             </button>
         </div>
     );
