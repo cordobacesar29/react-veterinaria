@@ -1,22 +1,23 @@
 import React from 'react';
+import './Select.css';
 
-export const Select = () => {
+export const Select = ({options = [], nombreCampo = "vacio" }) => {
     return(
-        <div className="row mb-3">
-            <div className="col">
-                <select  
-                    defaultValue="Tipo" 
-                    id="tipo" 
-                    className="form-select" 
-                    aria-label="Default select example"
+        <select  
+            defaultValue="Tipo" 
+            id="tipo" 
+            className="form-select" 
+            aria-label="Default select example"
+        >
+            
+            {options.map(({valor,etiqueta}, index) =>(
+                <option  
+                    key={`${nombreCampo}-${index}-${valor}-${etiqueta}`} 
+                    value={valor}
                 >
-                    <option></option>
-                    <option value="Perro">Perro</option>
-                    <option value="Gato">Gato</option>
-                    <option value="Pájaro">Pájaro</option>
-                    <option value="Otro">Otro</option>
-                </select>
-            </div>
-        </div>
+                    {etiqueta}
+                </option>
+            ))}
+        </select>
     )
 }

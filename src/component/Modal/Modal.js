@@ -12,7 +12,15 @@ export const Modal = () => {
                         <ModalHeader/>
                         <div className="modal-body">
                             <form id="form">
-                                <Select/>
+                                <Select options = {[
+                                        {valor: "Tipo Animal", etiqueta:"Tipo Animal"},
+                                        {valor: "Perro", etiqueta:"Perro"},
+                                        {valor: "Gato", etiqueta:"Gato"},
+                                        {valor:"Pájaro", etiqueta:"Pájaro"},
+                                        {valor:"Otro", etiqueta:"Otro"}
+                                    ]}
+                                    nombreCampo="Tipo Animal"
+                                />
                                 <div className="form-row">
                                     <div className="col">
                                         <input id="input-nombre" type="text" className="form-control" placeholder="Nombre" aria-label="Nombre"/>
