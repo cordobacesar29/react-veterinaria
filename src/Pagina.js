@@ -23,7 +23,7 @@ export class Pagina extends Component{
                     <ActionMenu cambiarModal={this.cambiarModal}/>
                     <Table/>
                 </div>
-                {this.state.mostrarModal && <Modal/>}
+                {this.state.mostrarModal && <Modal cambiarModal={this.cambiarModal}/>}
             </>
         );
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './ModalHeader.css';
 
-export const ModalHeader = () => {
+export const ModalHeader = ({ cambiarModal= () => {} }) => {
     return (
         <div className="modal-header">
             <h5 className="modal-title" id="exampleModalLabel">
@@ -12,6 +12,7 @@ export const ModalHeader = () => {
                 className="btn-close" 
                 data-bs-dismiss="modal" 
                 aria-label="Close"
+                onClick={cambiarModal}
             >
             X
             </button>
