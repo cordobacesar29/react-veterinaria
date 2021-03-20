@@ -2,36 +2,58 @@ import React from 'react';
 import { ModalHeader } from './ModalHeader';
 import { Select } from '../Select/Select';
 import './Modal.css';
+const tipoMascota = [
+    {valor: "Tipo Animal", etiqueta:"Tipo Animal"},
+    {valor: "Perro", etiqueta:"Perro"},
+    {valor: "Gato", etiqueta:"Gato"},
+    {valor:"Pájaro", etiqueta:"Pájaro"},
+    {valor:"Otro", etiqueta:"Otro"}
+];
 
-export const Modal = () => {
+export const Modal = ({ cambiarModal = () => {} }) => {
     return (
         <>
             <div className="modal" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
                     <div className="modal-content">
-                        <ModalHeader/>
+                        <ModalHeader cambiarModal={cambiarModal}/>
                         <div className="modal-body">
                             <form id="form">
-                                <Select options = {[
-                                        {valor: "Tipo Animal", etiqueta:"Tipo Animal"},
-                                        {valor: "Perro", etiqueta:"Perro"},
-                                        {valor: "Gato", etiqueta:"Gato"},
-                                        {valor:"Pájaro", etiqueta:"Pájaro"},
-                                        {valor:"Otro", etiqueta:"Otro"}
-                                    ]}
-                                    nombreCampo="Tipo Animal"
-                                />
+                                <Select options = {tipoMascota} nombreCampo="Tipo Animal"/>
                                 <div className="form-row">
                                     <div className="col">
-                                        <input id="input-nombre" type="text" className="form-control" placeholder="Nombre" aria-label="Nombre"/>
+                                        <input 
+                                            type="text" 
+                                            id="input-nombre" 
+                                            className="form-control" 
+                                            placeholder="Nombre" 
+                                            aria-label="Nombre"/>
                                     </div>
                                     <div className="col">
-                                        <input  id="input-propie" type="text" className="form-control" placeholder="Propietario" aria-label="Propietario"/>
+                                        <input 
+                                            id="input-propie" 
+                                            type="text" 
+                                            className="form-control" 
+                                            placeholder="Propietario" 
+                                            aria-label="Propietario"/>
                                     </div>
                                 </div>
                                 <div className="modal-footer">
-                                    <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                                    <button type="button" className="btn btn-primary" id="guardar" data-bs-dismiss="modal">Guardar Cambios</button>
+                                    <button 
+                                        type="button" 
+                                        className="btn btn-secondary" 
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Cerrar
+                                    </button>
+                                    <button 
+                                        type="button" 
+                                        className="btn btn-primary" 
+                                        id="guardar" 
+                                        data-bs-dismiss="modal"
+                                    >
+                                        Guardar Cambios
+                                    </button>
                                 </div>
                             </form>
                         </div>
