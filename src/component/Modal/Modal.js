@@ -1,7 +1,9 @@
 import React from 'react';
 import { ModalHeader } from './ModalHeader';
 import { Select } from '../Select/Select';
+import { Input } from '../Input/Input';
 import './Modal.css';
+
 const tipoMascota = [
     {valor: "Tipo Animal", etiqueta:"Tipo Animal"},
     {valor: "Perro", etiqueta:"Perro"},
@@ -22,20 +24,10 @@ export const Modal = ({ cambiarModal = () => {} }) => {
                                 <Select options = {tipoMascota} nombreCampo="Tipo Animal"/>
                                 <div className="form-row">
                                     <div className="col">
-                                        <input 
-                                            type="text" 
-                                            id="input-nombre" 
-                                            className="form-control" 
-                                            placeholder="Nombre" 
-                                            aria-label="Nombre"/>
+                                        <Input tipo="text" nombreCampo="nombre"/>
                                     </div>
                                     <div className="col">
-                                        <input 
-                                            id="input-propie" 
-                                            type="text" 
-                                            className="form-control" 
-                                            placeholder="Propietario" 
-                                            aria-label="Propietario"/>
+                                        <Input tipo="text" nombreCampo="propietario"/>
                                     </div>
                                 </div>
                                 <div className="modal-footer">
