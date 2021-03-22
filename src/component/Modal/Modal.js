@@ -1,5 +1,6 @@
 import React from 'react';
 import { ModalHeader } from './ModalHeader';
+import { ModalFooter } from './ModalFooter';
 import { Select } from '../Select/Select';
 import { Input } from '../Input/Input';
 import './Modal.css';
@@ -30,23 +31,7 @@ export const Modal = ({ cambiarModal = () => {} }) => {
                                         <Input tipo="text" nombreCampo="propietario"/>
                                     </div>
                                 </div>
-                                <div className="modal-footer">
-                                    <button 
-                                        type="button" 
-                                        className="btn btn-secondary" 
-                                        data-bs-dismiss="modal"
-                                    >
-                                        Cerrar
-                                    </button>
-                                    <button 
-                                        type="button" 
-                                        className="btn btn-primary" 
-                                        id="guardar" 
-                                        data-bs-dismiss="modal"
-                                    >
-                                        Guardar Cambios
-                                    </button>
-                                </div>
+                                <ModalFooter cambiarModal={cambiarModal}/>
                             </form>
                         </div>
                     </div>
