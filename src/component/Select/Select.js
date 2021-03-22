@@ -6,7 +6,7 @@ export const Select = ({options = [], nombreCampo = "vacio" }) => {
         <select  
             defaultValue="Tipo" 
             id="tipo" 
-            className="form-select" 
+            className="form-control" 
             aria-label="Default select example"
         >
             
