@@ -16,11 +16,12 @@ export class Pagina extends Component{
         this.setState({ mostrarModal: !this.state.mostrarModal });
     }
     render(){
+        const {titulo = 'Pagina sin titulo'} = this.props;
         return(
             <>
                 <div className="container">
                     <Nav/>                
-                    <ActionMenu cambiarModal={this.cambiarModal}/>
+                    <ActionMenu cambiarModal={this.cambiarModal} titulo={titulo}/>
                     <Table/>
                 </div>
                 {this.state.mostrarModal && <Modal cambiarModal={this.cambiarModal}/>}
