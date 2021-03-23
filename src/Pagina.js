@@ -19,9 +19,9 @@ export class Pagina extends Component{
     };
 
     listar = async () => {
-        const entidad = this.props;
-        const entidades = await listarEntidades({entidad});
-        this.setState({entidades});
+        const { entidad } = this.props;
+        const entidades = await listarEntidades({ entidad });
+        this.setState({ entidades });
     };
 
     componentDidMount = () => {
@@ -36,7 +36,7 @@ export class Pagina extends Component{
                 <div className="container">
                     <Nav/>                
                     <ActionMenu cambiarModal={this.cambiarModal} titulo={titulo}/>
-                    <Table/>
+                    <Table entidades={this.state.entidades}/>
                 </div>
                 {this.state.mostrarModal && <Modal cambiarModal={this.cambiarModal}/>}
             </>
