@@ -3,19 +3,33 @@ import { Nav } from './component/Nav/Nav';
 import { ActionMenu } from './component/ActionMenu/ActionMenu';
 import { Table } from './component/Table/Table';
 import { Modal } from './component/Modal/Modal';
+import {listarEntidades} from './servicio';
 
 export class Pagina extends Component{
     constructor(props) {
         super(props);
         this.state = {
             mostrarModal: false,
+            entidades: [],
         };
-    }
+    };
 
     cambiarModal = () => {
         this.setState({ mostrarModal: !this.state.mostrarModal });
+    };
+
+    listar = async () => {
+        const entidad = this.props;
+        const entidades = await listarEntidades({entidad});
+        this.setState({entidades});
+    };
+
+    componentDidMount = () => {
+        this.listar();
     }
-    render(){
+
+    //el metodo render siempre debe ir ultimo
+    render = () => {
         const {titulo = 'Pagina sin titulo'} = this.props;
         return(
             <>
@@ -27,5 +41,5 @@ export class Pagina extends Component{
                 {this.state.mostrarModal && <Modal cambiarModal={this.cambiarModal}/>}
             </>
         );
-    }
+    };
 }
