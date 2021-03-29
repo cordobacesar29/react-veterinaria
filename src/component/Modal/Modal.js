@@ -13,7 +13,7 @@ const tipoMascota = [
     {valor:"Otro", etiqueta:"Otro"}
 ];
 
-export const Modal = ({ cambiarModal = () => {} }) => {
+export const Modal = ({ cambiarModal = () => {},  manejarInput = () => {} }) => {
     return (
         <>
             <div className="modal" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -22,13 +22,28 @@ export const Modal = ({ cambiarModal = () => {} }) => {
                         <ModalHeader cambiarModal={cambiarModal}/>
                         <div className="modal-body">
                             <form id="form">
-                                <Select options = {tipoMascota} nombreCampo="Tipo Animal"/>
+                                <Select 
+                                    options = {tipoMascota} 
+                                    onChange={manejarInput} 
+                                    nombreCampo="tipo"
+                                    placeholder = 'Tipo Animal'
+                                />
                                 <div className="form-row">
                                     <div className="col">
-                                        <Input tipo="text" nombreCampo="nombre"/>
+                                        <Input 
+                                            tipo="text" 
+                                            nombreCampo="nombre"
+                                            onInput={manejarInput}
+                                            placeholder = 'Nombre'
+                                        />
                                     </div>
                                     <div className="col">
-                                        <Input tipo="text" nombreCampo="propietario"/>
+                                        <Input 
+                                            tipo="text" 
+                                            nombreCampo="propietario"
+                                            onInput={manejarInput}
+                                            placeholder = 'Propietario'
+                                        />
                                     </div>
                                 </div>
                                 <ModalFooter cambiarModal={cambiarModal}/>

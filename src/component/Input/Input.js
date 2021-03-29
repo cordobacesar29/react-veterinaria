@@ -1,15 +1,20 @@
 import React from 'react';
 import './Input.css';
 
-export const Input = ({ tipo = 'text', nombreCampo }) => {
+export const Input = ({ 
+    tipo = 'text', 
+    nombreCampo, 
+    onInput = () => {},
+    placeholder,
+}) => {
     return( 
         <input 
             type={tipo} 
-            id={nombreCampo}
             name={nombreCampo}
             className="form-control" 
-            placeholder={nombreCampo}
+            placeholder={placeholder}
             aria-label={nombreCampo}
+            onInput = {onInput}
         />
     )
 }
