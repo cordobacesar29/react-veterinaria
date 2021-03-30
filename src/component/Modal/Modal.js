@@ -13,7 +13,11 @@ const tipoMascota = [
     {valor:"Otro", etiqueta:"Otro"}
 ];
 
-export const Modal = ({ cambiarModal = () => {},  manejarInput = () => {} }) => {
+export const Modal = ({ 
+    cambiarModal = () => {},  
+    manejarInput = () => {},
+    crearEntidad = () => {},
+ }) => {
     return (
         <>
             <div className="modal" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -46,7 +50,10 @@ export const Modal = ({ cambiarModal = () => {},  manejarInput = () => {} }) => 
                                         />
                                     </div>
                                 </div>
-                                <ModalFooter cambiarModal={cambiarModal}/>
+                                <ModalFooter 
+                                    cambiarModal={cambiarModal}
+                                    crearEntidad={crearEntidad}
+                                />
                             </form>
                         </div>
                     </div>

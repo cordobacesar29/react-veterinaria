@@ -1,7 +1,10 @@
 import React from 'react';
 import './ModalFooter.css';
 
-export const ModalFooter = ( { cambiarModal= () => {} } ) => {
+export const ModalFooter = ( { 
+    cambiarModal = () => {}, 
+    crearEntidad = () => {},
+} ) => {
     return(
         <div className="modal-footer">
             <button 
@@ -17,9 +20,9 @@ export const ModalFooter = ( { cambiarModal= () => {} } ) => {
                 className="btn btn-primary" 
                 id="guardar" 
                 data-bs-dismiss="modal"
-                onClick={cambiarModal}
+                onClick={crearEntidad}
             >
-                Guardar Cambios
+                Crear
             </button>
         </div>
     )
