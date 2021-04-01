@@ -14,7 +14,7 @@ export const Table = ({ entidades='' }) => {
                         (entidad, index) =>
                         <Fila 
                             entidad={entidad} 
-                            index={index}
+                            key={index}
                         />
                     )
                 }
