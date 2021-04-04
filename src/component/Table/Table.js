@@ -3,7 +3,7 @@ import { Encabezado } from './Encabezado';
 import { Fila } from './Fila';
 import './Table.css';
 
-export const Table = ({ entidades='' }) => {
+export const Table = ({ entidades= [], editarEntidad = ()=>{} }) => {
     const columnas = entidades.length > 0 ? Object.keys(entidades[0]) : [];
     return (
         <table className="table table-hover">
@@ -11,11 +11,14 @@ export const Table = ({ entidades='' }) => {
             <tbody id="lista-mascotas">
                 {
                     entidades.map(
-                        (entidad, index) =>
-                        <Fila 
-                            entidad={entidad} 
-                            key={index}
-                        />
+                        (entidad, index) => (
+                            <Fila 
+                                key={`fila-${index}`}
+                                index={index}
+                                entidad={entidad} 
+                                editarEntidad={editarEntidad}
+                            />
+                        )
                     )
                 }
             </tbody>

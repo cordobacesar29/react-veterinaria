@@ -6,6 +6,7 @@ export const Input = ({
     nombreCampo, 
     onInput = () => {},
     placeholder,
+    value = '',
 }) => {
     return( 
         <input 
@@ -15,6 +16,7 @@ export const Input = ({
             placeholder={placeholder}
             aria-label={nombreCampo}
             onInput = {onInput}
+            value={value}
         />
     )
 }

@@ -6,15 +6,16 @@ export const Select = ({
     nombreCampo = "vacio", 
     onChange= () => {},
     placeholder,
+    value = '',
 }) => {
     return(
         <select  
-            defaultValue="Tipo" 
+            defaultValue={value}
             id="tipo" 
             className="form-control" 
             aria-label="Default select example"
             onChange={onChange}
-            name={nombreCampo}
+            name={nombreCampo}  
         >
             <option value=''>Seleccione{placeholder}</option>
             {options.map(({valor,etiqueta}, index) =>(

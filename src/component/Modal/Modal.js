@@ -17,6 +17,7 @@ export const Modal = ({
     cambiarModal = () => {},  
     manejarInput = () => {},
     crearEntidad = () => {},
+    objeto = {},
  }) => {
     return (
         <>
@@ -31,22 +32,25 @@ export const Modal = ({
                                     onChange={manejarInput} 
                                     nombreCampo="tipo"
                                     placeholder = 'Tipo Animal'
+                                    value = {objeto.tipo}
                                 />
                                 <div className="form-row">
                                     <div className="col">
                                         <Input 
                                             tipo="text" 
-                                            nombreCampo="nombre"
+                                            nombreCampo='nombre'
                                             onInput={manejarInput}
                                             placeholder = 'Nombre'
+                                            value = {objeto.nombre}
                                         />
                                     </div>
                                     <div className="col">
                                         <Input 
                                             tipo="text" 
-                                            nombreCampo="propietario"
+                                            nombreCampo= 'propietario'
                                             onInput={manejarInput}
                                             placeholder = 'Propietario'
+                                            value = {objeto.propietario}
                                         />
                                     </div>
                                 </div>
