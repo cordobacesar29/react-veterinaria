@@ -3,7 +3,10 @@ import { Nav } from './component/Nav/Nav';
 import { ActionMenu } from './component/ActionMenu/ActionMenu';
 import { Table } from './component/Table/Table';
 import { Modal } from './component/Modal/Modal';
-import { listarEntidades, crearEditarEntidades } from './servicio';
+import { listarEntidades,
+        crearEditarEntidades,
+        eliminarEntidades
+    } from './servicio';
 
 export class Pagina extends Component {
     constructor(props) {
@@ -48,6 +51,13 @@ export class Pagina extends Component {
             this.cambiarModal(null, 'PUT');
         });        
     };
+    
+    eliminarEntidad =  async (e, index) => {
+        const { entidad } = this.props;
+        const respuesta = await eliminarEntidades({ entidad, idObjeto: index });
+        console.log( {respuesta} );
+        this.listar();
+    }
 
     componentDidMount = () => {
         this.listar();
@@ -69,6 +79,7 @@ export class Pagina extends Component {
                     <Table 
                         entidades={this.state.entidades}
                         editarEntidad={this.editarEntidad}
+                        eliminarEntidad={this.eliminarEntidad}
                     />
                 </div>
                 {this.state.mostrarModal && (

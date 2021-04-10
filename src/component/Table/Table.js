@@ -3,7 +3,11 @@ import { Encabezado } from './Encabezado';
 import { Fila } from './Fila';
 import './Table.css';
 
-export const Table = ({ entidades= [], editarEntidad = ()=>{} }) => {
+export const Table = ({ 
+    entidades= [],
+    editarEntidad = ()=>{},
+    eliminarEntidad = ()=>{},
+ }) => {
     const columnas = entidades.length > 0 ? Object.keys(entidades[0]) : [];
     return (
         <table className="table table-hover">
@@ -17,6 +21,7 @@ export const Table = ({ entidades= [], editarEntidad = ()=>{} }) => {
                                 index={index}
                                 entidad={entidad} 
                                 editarEntidad={editarEntidad}
+                                eliminarEntidad={eliminarEntidad}
                             />
                         )
                     )

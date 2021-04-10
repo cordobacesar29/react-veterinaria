@@ -1,7 +1,6 @@
 const API_URL = 'https://veterinariapp-backend.vercel.app'
 
 export const listarEntidades = async ({ entidad = 'mascotas'}) => {
-    
     try {
         const respuesta = await fetch(`${API_URL}/${entidad}`);
         const datos =  await respuesta.json();
@@ -41,3 +40,22 @@ export const crearEditarEntidades = async ({
         console.log(error);
     }
 }   
+
+export const eliminarEntidades = async ({ 
+    entidad = 'mascotas',
+    idObjeto = null,
+    }) => {   
+    try {
+        if(idObjeto || idObjeto === 0) { 
+            const respuesta = await fetch(`${API_URL}/${entidad}/${idObjeto}`,{ 
+                method: 'DELETE',
+            });
+            const datos =  await respuesta.json();
+            return datos;
+        };
+        throw new Error('idObjeto no puede estar vacío');
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
