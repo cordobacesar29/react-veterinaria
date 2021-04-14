@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Nav } from './component/Nav/Nav';
 import { ActionMenu } from './component/ActionMenu/ActionMenu';
 import { Table } from './component/Table/Table';
 import { Modal } from './component/Modal/Modal';
@@ -70,18 +69,15 @@ export class Pagina extends Component {
         const {titulo = 'Pagina sin titulo'} = this.props;
         return(
             <>
-                <div className="container">
-                    <Nav/>                
-                    <ActionMenu 
-                        cambiarModal={this.cambiarModal} 
-                        titulo={titulo}
-                    />
-                    <Table 
-                        entidades={this.state.entidades}
-                        editarEntidad={this.editarEntidad}
-                        eliminarEntidad={this.eliminarEntidad}
-                    />
-                </div>
+                <ActionMenu 
+                    cambiarModal={this.cambiarModal} 
+                    titulo={titulo}
+                />
+                <Table 
+                    entidades={this.state.entidades}
+                    editarEntidad={this.editarEntidad}
+                    eliminarEntidad={this.eliminarEntidad}
+                />
                 {this.state.mostrarModal && (
                     <Modal 
                         cambiarModal={this.cambiarModal} 
