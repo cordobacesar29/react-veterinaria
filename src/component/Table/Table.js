@@ -20,6 +20,7 @@ export const Table = ({
                                 key={`fila-${index}`}
                                 index={index}
                                 entidad={entidad} 
+                                columnas={columnas}
                                 editarEntidad={editarEntidad}
                                 eliminarEntidad={eliminarEntidad}
                             />

@@ -3,9 +3,9 @@ import { ActionMenu } from './component/ActionMenu/ActionMenu';
 import { Table } from './component/Table/Table';
 import { Modal } from './component/Modal/Modal';
 import { listarEntidades,
-        crearEditarEntidades,
-        eliminarEntidades
-    } from './servicio';
+    crearEditarEntidades,
+    eliminarEntidades
+} from './servicio';
 
 export class Pagina extends Component {
     constructor(props) {
@@ -59,6 +59,7 @@ export class Pagina extends Component {
     }
 
     componentDidMount = () => {
+        console.log(this.props);
         this.listar();
     };
 

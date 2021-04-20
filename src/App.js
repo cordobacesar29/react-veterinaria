@@ -2,34 +2,33 @@ import {Pagina} from './Pagina';
 import { Switch, Route } from "react-router-dom";
 import { Nav } from './component/Nav/Nav';
 
-
 function App() {
   return (
-    <div class="container">
+    <div className="container">
       <Nav/>
       <Switch>
         <Route 
           exact path='/' 
-          component={()=>(
-            <Pagina titulo='Mascotas' entidad='mascotas'/>
+          component={(props)=>(
+            <Pagina {...props} titulo='Mascotas' entidad='mascotas'/>
           )} 
         />
         <Route 
           path='/propietario' 
-          component={()=>(
-            <Pagina titulo='Propietarios' entidad='propietarios'/>
+          component={(props)=>(
+            <Pagina {...props} titulo='Propietarios' entidad='propietarios'/>
           )}
         />
         <Route 
           path='/profesional' 
-          component={()=>(
-            <Pagina titulo='Mascotas' entidad='mascotas'/>
+          component={(props)=>(
+            <Pagina {...props} titulo='Profesionales' entidad='profesionales'/>
           )}
         />
         <Route 
           path='/consultas' 
-          component={()=>(
-            <Pagina titulo='Mascotas' entidad='mascotas'/>
+          component={(props)=>(
+            <Pagina {...props} titulo='Consultas' entidad='consultas'/>
           )}
         />
       </Switch>
