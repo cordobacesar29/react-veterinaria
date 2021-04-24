@@ -16,6 +16,7 @@ export class Pagina extends Component {
             objeto: {},
             idObjeto: null,
             method: 'POST',
+            columnas: [],
         };
     };
 
@@ -26,7 +27,11 @@ export class Pagina extends Component {
     listar = async () => {
         const { entidad } = this.props;
         const entidades = await listarEntidades({ entidad });
-        this.setState({ entidades });
+        let columnas = [];
+        if(Array.isArray(entidades) && entidades.length > 0) {
+            columnas = Object.keys(entidades[0]) || [];
+        }
+        this.setState({ entidades, columnas });
     };
 
     manejarInput = (e) => {
@@ -78,6 +83,7 @@ export class Pagina extends Component {
                     entidades={this.state.entidades}
                     editarEntidad={this.editarEntidad}
                     eliminarEntidad={this.eliminarEntidad}
+                    columnas={this.state.columnas}
                 />
                 {this.state.mostrarModal && (
                     <Modal 
