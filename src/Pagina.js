@@ -20,6 +20,7 @@ export class Pagina extends Component {
         };
     };
 
+    
     cambiarModal = (_e, method = 'POST') => {
         this.setState({ mostrarModal: !this.state.mostrarModal, method });
     };
